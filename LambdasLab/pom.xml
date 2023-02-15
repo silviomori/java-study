@@ -1,0 +1,22 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.technomori.javastudy</groupId>
+  <artifactId>LambdasLab</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Lambdas Lab</name>
+  <description>Udemy - Java 17, Java 11, Advanced Java 8 (1Z0-829,1Z0-819,1Z0-809) - Assignment 1</description>
+
+  <build>
+  	<plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<configuration>
+                <source>17</source>
+                <target>17</target>
+                <encoding>UTF-8</encoding>
+            </configuration>
+  		</plugin>
+  	</plugins>
+  </build>
+</project>
