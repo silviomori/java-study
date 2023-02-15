@@ -1,11 +1,13 @@
 package com.technomori.javastudy.lambdaslab;
 
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 import com.technomori.javastudy.lambdaslab.entities.Person;
 import com.technomori.javastudy.lambdaslab.interfaces.Evaluate;
+import com.technomori.javastudy.lambdaslab.interfaces.Functionable;
 import com.technomori.javastudy.lambdaslab.interfaces.Printable;
 import com.technomori.javastudy.lambdaslab.interfaces.Retrievable;
 
@@ -32,6 +34,8 @@ public class BasicLambdas {
 		Predicate<Person> predicateAdult = p -> p.getAge() >= 18;
 		System.out.println("Is Mike adult? " + basicLambdas.check(personMike, predicateAdult));
 		System.out.println("Is Ann adult? " + basicLambdas.check(personAnn, predicateAdult));
+		
+		basicLambdas.function();
 	}
 
 	private void consumer() {
@@ -66,6 +70,13 @@ public class BasicLambdas {
 	private <T> boolean check(T t, Predicate<T> predicate) {
 		return predicate.test(t);
 	}
-	
+
+	private void function() {
+		Functionable<Integer, String> functionable = n -> "Number is: " + n;
+		System.out.println("Functionable: " + functionable.applyThis(25));
+		
+		Function<Integer, String> function = n -> "Number is: " + n;
+		System.out.println("Function: " + function.apply(25));
+	}
 }
 
