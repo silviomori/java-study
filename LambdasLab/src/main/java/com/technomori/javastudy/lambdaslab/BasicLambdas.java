@@ -1,5 +1,7 @@
 package com.technomori.javastudy.lambdaslab;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -36,6 +38,19 @@ public class BasicLambdas {
 		System.out.println("Is Ann adult? " + basicLambdas.check(personAnn, predicateAdult));
 		
 		basicLambdas.function();
+		
+		List<Person> listPeople = getPeople();
+		System.out.println("Sort people by Age:");
+		basicLambdas.sortAge(listPeople);
+		listPeople.forEach(System.out::println);
+		
+		System.out.println("Sort people by Name:");
+		basicLambdas.sortName(listPeople);
+		listPeople.forEach(System.out::println);
+		
+		System.out.println("Sort people by Height:");
+		basicLambdas.sortHeight(listPeople);
+		listPeople.forEach(System.out::println);		
 	}
 
 	private void consumer() {
@@ -77,6 +92,27 @@ public class BasicLambdas {
 		
 		Function<Integer, String> function = n -> "Number is: " + n;
 		System.out.println("Function: " + function.apply(25));
+	}
+	
+	private static List<Person> getPeople() {
+		List<Person> result = new ArrayList<>();
+		result.add(new Person("Mike", 33, 1.8));
+		result.add(new Person("Mary", 25, 1.4));
+		result.add(new Person("Alan", 34, 1.7));
+		result.add(new Person("Zoe", 30, 1.5));
+		return result;
+	}
+	
+	public void sortAge(List<Person> listPeople) {
+		listPeople.sort((p1, p2) -> Integer.compare(p1.getAge(), p2.getAge()));
+	}
+	
+	public void sortName(List<Person> listPeople) {
+		listPeople.sort((p1, p2) -> p1.getName().compareTo(p2.getName()));
+	}
+	
+	public void sortHeight(List<Person> listPeople) {
+		listPeople.sort((p1, p2) -> Double.compare(p1.getHeight(), p2.getHeight()));
 	}
 }
 

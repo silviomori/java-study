@@ -22,4 +22,9 @@ public class Person {
 	public double getHeight() {
 		return height;
 	}
+	
+	@Override
+	public String toString() {
+		return name + ", " + age + " yo, " + height + "m"; 
+	}
 }
