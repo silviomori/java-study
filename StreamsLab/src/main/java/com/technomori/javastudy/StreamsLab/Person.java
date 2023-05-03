@@ -10,6 +10,10 @@ public class Person {
         this.age = age;
     }
 
+    Person(String firstName, int age) {
+        this(firstName, null, age);
+    }
+
     public String getFirstName() {
         return firstName;
     }
